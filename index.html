@@ -64,14 +64,14 @@
 
     <button onclick="clearGrid()">Clear</button>
 
-    <textarea name="" id="data" placeholder="What letter did you guess? (Default, the one the model picked.)"></textarea>
+    <textarea name="" id="data" placeholder="What letter did you guess? (Default, the one the model picked.) THIS DOES NOT WORK ALL THE TIME. I have disabled it for now. Its useless to click send."></textarea>
 
     <button onclick="sendData()">Send Results</button>
     
     <textarea id="output" readonly></textarea>
 
     <script>
-        const socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev/');
+        // const socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev/');
 
         function dotProd(vec1, vec2) {
             let total = 0
