@@ -6473,12 +6473,8 @@
                 vector.push(pixel.classList.contains("active") ? 1 : 0);
             });
             vector.push(correct);
-            try {
-                socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev');
-                socket.send(JSON.stringify(vector));
-            } catch (e) {
-                console.log("Error." + e)
-            }
+            socket.send(JSON.stringify(vector));
+            
             document.querySelector("#data").value = ''
             clearGrid();
         }
