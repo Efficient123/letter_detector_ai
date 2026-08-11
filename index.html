@@ -6476,8 +6476,8 @@
             try {
                 socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev');
                 socket.send(JSON.stringify(vector));
-            } catch {
-                cosnole.log("Error.")
+            } catch (e) {
+                console.log("Error." + e)
             }
             document.querySelector("#data").value = ''
             clearGrid();
