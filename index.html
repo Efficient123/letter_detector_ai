@@ -72,7 +72,7 @@
     <textarea id="output" readonly></textarea>
 
     <script>
-        const socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev');
+        let socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev');
         
         function dotProd(vec1, vec2) {
             let total = 0
@@ -6473,7 +6473,12 @@
                 vector.push(pixel.classList.contains("active") ? 1 : 0);
             });
             vector.push(correct);
-            socket.send(JSON.stringify(vector));
+            try {
+                socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev');
+                socket.send(JSON.stringify(vector));
+            } catch {
+                cosnole.log("Error.")
+            }
             document.querySelector("#data").value = ''
             clearGrid();
         }
