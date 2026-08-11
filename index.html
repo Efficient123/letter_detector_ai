@@ -73,7 +73,9 @@
 
     <script>
         let socket = new WebSocket('https://ambiguity-kettle-oink.ngrok-free.dev');
-        
+        socket.onclose = () => {
+            socket = new WebSocket('wss://ambiguity-kettle-oink.ngrok-free.dev');
+        };
         function dotProd(vec1, vec2) {
             let total = 0
             for (let i = 0; i < vec1.length; i++) {
